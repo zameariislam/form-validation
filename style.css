@@ -43,3 +43,39 @@ label {
 }
 
 /* style rules for icon */
+form div {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+
+form div i {
+    position: absolute;
+    padding: 10px;
+}
+
+.success-icon,
+.failure-icon {
+    right: 0px;
+    opacity: 0;
+}
+
+.success-icon {
+    color: green;
+}
+
+.failure-icon,
+.error {
+    color: red;
+}
+
+.error {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Style rules for button  */
+
+#submit {
+    width: 100%;
+}
