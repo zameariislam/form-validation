@@ -1,43 +1,57 @@
-
-
-// target id and classes 
+//  Target all user Input
 
 let id = (id) => document.getElementById(id)
-let classes = (classes) => document.getElementsByClassName(classes)
-let username = id('username');
-let email = id('email');
-let password = id('password');
-let form = id('form')
-let errorMessage = document.getElementsByClassName('error')
-let successIcon = classes('success-icon')
-let failureIcon = classes('failure-icon')
-// add event listener 
-form.addEventListener('submit', function (e) {
+
+let username = id('username'),
+    email = id('email'),
+    password = id('password'),
+    form = id('form')
+let classes = (classes) => document.getElementsByClassName(classes);
+let successIcon = classes('success-icon'),
+    failureIcon = classes('failure-icon'),
+    errorMessage = classes('error');
+
+// add eventlistener to the form 
+form.addEventListener('submit', (e) => {
     e.preventDefault()
-    engine(username, 0, 'User name can not be blank');
-    engine(email, 1, 'Email  can not be blank');
+    engine(username, 0, 'User can not be blank');
+    engine(email, 1, 'Email can not be blank');
     engine(password, 2, 'Password can not be blank');
 
 
 })
 
-let engine = (id, serial, message) => {
+
+let engine = (id, index, message) => {
 
     if (id.value.trim() === '') {
-        errorMessage[serial].innerHTML = message;
-        failureIcon[serial].style.opacity = 1
-        successIcon[serial].style.opacity = 0
+        errorMessage[index].innerHTML = message;
+        failureIcon[index].style.opacity = 1;
+        successIcon[index].style.opacity = 0;
+
     }
     else {
-        errorMessage[serial].innerHTML = ''
-        successIcon[serial].style.opacity = 1
-        failureIcon[serial].style.opacity = 0
+        errorMessage[index].innerHTML = ''
+        failureIcon[index].style.opacity = 0;
+        successIcon[index].style.opacity = 1;
 
     }
-
-    id.value = ''
-
+    id.value = '';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
